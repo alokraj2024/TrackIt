@@ -1,0 +1,62 @@
+/* ---- App Layout ---- */
+.appLayout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 32px;
+  transition: margin-left var(--transition-slow);
+  min-height: 100vh;
+}
+
+/* ---- Loading Screen ---- */
+.loadingScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--bg-primary);
+}
+
+.loader {
+  display: flex;
+  gap: 8px;
+}
+
+.loaderDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loaderDot:nth-child(2) {
+  animation-delay: 0.2s;
+  background: var(--accent-purple);
+}
+
+.loaderDot:nth-child(3) {
+  animation-delay: 0.4s;
+  background: var(--accent-emerald);
+}
+
+.loadingText {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 24px 16px;
+    padding-top: 72px;
+  }
+}

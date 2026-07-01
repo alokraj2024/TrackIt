@@ -1,0 +1,338 @@
+.dashboard {
+  padding: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.greeting {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--accent-amber);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ---- Stats Grid ---- */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all var(--transition-base);
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.statCard.blue .statIcon { background: rgba(59, 130, 246, 0.12); color: var(--accent-blue); }
+.statCard.emerald .statIcon { background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); }
+.statCard.amber .statIcon { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); }
+.statCard.purple .statIcon { background: rgba(139, 92, 246, 0.12); color: var(--accent-purple); }
+
+.statCard.blue:hover { border-color: rgba(59, 130, 246, 0.25); }
+.statCard.emerald:hover { border-color: rgba(16, 185, 129, 0.25); }
+.statCard.amber:hover { border-color: rgba(245, 158, 11, 0.25); }
+.statCard.purple:hover { border-color: rgba(139, 92, 246, 0.25); }
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.statSub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ---- Main Grid ---- */
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--border-color-hover);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cardHeader h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cardBadge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-input);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.cardBody {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* ---- Empty State ---- */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.emptyIcon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* ---- Task Item ---- */
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.priorityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.priority-low { background: var(--accent-blue); }
+.priority-medium { background: var(--accent-amber); }
+.priority-high { background: var(--accent-rose); }
+.priority-urgent { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+
+.taskText {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+/* ---- Schedule Item ---- */
+.scheduleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.scheduleTime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 110px;
+  font-weight: 500;
+}
+
+.scheduleSubject {
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-left: 3px solid;
+  padding-left: 10px;
+}
+
+/* ---- Habit Item ---- */
+.habitItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.habitEmoji {
+  font-size: 1.1rem;
+}
+
+.habitName {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.habitStatus {
+  font-size: 1rem;
+}
+
+.habitDone {
+  animation: scaleIn 0.3s ease;
+}
+
+.habitPending {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.streakBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* ---- Quote Card ---- */
+.quoteCard {
+  grid-column: span 2;
+  padding: 28px 32px;
+  background: var(--gradient-hero);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.quoteCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04), rgba(139, 92, 246, 0.04));
+}
+
+.quoteIcon {
+  color: var(--accent-blue);
+  opacity: 0.4;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteAuthor {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 4px;
+  }
+
+  .greeting {
+    font-size: 1.3rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteCard {
+    grid-column: span 1;
+  }
+}

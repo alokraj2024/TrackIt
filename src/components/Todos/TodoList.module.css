@@ -1,0 +1,325 @@
+.container {
+  padding: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ---- Progress ---- */
+.progressSection {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-success);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.progressText {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ---- Add Form ---- */
+.addForm {
+  padding: 20px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.addInput {
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.addOptions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.optionGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.select {
+  padding: 6px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* ---- Controls ---- */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  flex: 1;
+  position: relative;
+  min-width: 200px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 14px 10px 42px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  transition: all var(--transition-base);
+}
+
+.searchInput:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filterSelect {
+  padding: 10px 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.825rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filterSelect:hover {
+  border-color: var(--border-color-hover);
+}
+
+/* ---- Todo List ---- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.todoItem:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-color-hover);
+}
+
+.todoItem.completed {
+  opacity: 0.6;
+}
+
+.todoItem.completed .todoText {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* ---- Checkbox ---- */
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  color: transparent;
+}
+
+.checkbox:hover {
+  border-color: var(--accent-blue);
+}
+
+.checkbox.checked {
+  background: var(--gradient-success);
+  border-color: var(--accent-emerald);
+  color: #fff;
+}
+
+/* ---- Priority Dot ---- */
+.todoPriority {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.p-low { background: var(--accent-blue); }
+.p-medium { background: var(--accent-amber); }
+.p-high { background: var(--accent-rose); }
+.p-urgent { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+
+/* ---- Text ---- */
+.todoText {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.editInput {
+  flex: 1;
+  padding: 6px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--accent-blue);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+/* ---- Actions ---- */
+.todoActions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.todoItem:hover .todoActions {
+  opacity: 1;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.actionBtn:hover {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+}
+
+.deleteBtn:hover {
+  color: var(--accent-rose);
+  background: rgba(244, 63, 94, 0.1);
+}
+
+/* ---- Empty State ---- */
+.emptyState {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-muted);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.emptyState h3 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.emptyState p {
+  font-size: 0.85rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filterSelect {
+    flex: 1;
+  }
+
+  .todoActions {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,334 @@
+.container {
+  padding: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ---- Stats Row ---- */
+.statsRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statMini {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.statMini div {
+  display: flex;
+  flex-direction: column;
+}
+
+.fireIcon { color: var(--accent-amber); }
+.trophyIcon { color: var(--accent-purple); }
+.checkIcon { color: var(--accent-emerald); }
+
+.statNum {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.statLbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ---- Form ---- */
+.form {
+  padding: 24px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.formRow {
+  margin-bottom: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.iconPicker {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.iconBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.iconBtn:hover {
+  border-color: var(--border-color-hover);
+  transform: scale(1.1);
+}
+
+.iconBtn.activeIcon {
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ---- Habit List ---- */
+.habitList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.habitCard {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: all var(--transition-base);
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.habitCard:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-color-hover);
+}
+
+.habitCard.completed {
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.03);
+}
+
+.habitMain {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ---- Check Button ---- */
+.checkBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  font-size: 1.2rem;
+}
+
+.checkBtn:hover {
+  border-color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.checkBtn.checked {
+  background: var(--gradient-success);
+  border-color: var(--accent-emerald);
+  color: #fff;
+  animation: scaleIn 0.3s ease;
+}
+
+.habitIcon {
+  font-size: 1.2rem;
+}
+
+/* ---- Habit Info ---- */
+.habitInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.habitName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.habitMeta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.streakTag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  animation: streak-fire 2s ease infinite;
+}
+
+.totalTag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ---- Mini Calendar ---- */
+.miniCalendar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.calDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.calLabel {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.calDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.calDot.calDone {
+  background: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 6px var(--accent-emerald-glow);
+}
+
+/* ---- Actions ---- */
+.habitActions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.habitCard:hover .habitActions {
+  opacity: 1;
+}
+
+.habitActions button {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.habitActions button:hover {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+}
+
+.delBtn:hover {
+  color: var(--accent-rose) !important;
+  background: rgba(244, 63, 94, 0.1) !important;
+}
+
+/* ---- Empty State ---- */
+.emptyState {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-muted);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.emptyState h3 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.emptyState p {
+  font-size: 0.85rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .statsRow {
+    flex-direction: column;
+  }
+
+  .miniCalendar {
+    display: none;
+  }
+
+  .habitActions {
+    opacity: 1;
+  }
+}

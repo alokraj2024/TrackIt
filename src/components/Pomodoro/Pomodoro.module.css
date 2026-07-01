@@ -1,0 +1,258 @@
+.container {
+  padding: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ---- Presets ---- */
+.presets {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.presetBtn {
+  flex: 1;
+  padding: 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.presetBtn:hover {
+  border-color: var(--border-color-hover);
+  background: var(--bg-glass-hover);
+}
+
+.presetBtn.activePreset {
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.presetLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.presetTimes {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ---- Mode Toggle ---- */
+.modeToggle {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 40px;
+}
+
+.modeBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.modeBtn:hover {
+  color: var(--text-primary);
+}
+
+.modeBtn.activeMode {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Timer ---- */
+.timerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.timerRing {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 32px;
+}
+
+.timerSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.timerContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timerDisplay {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.timerMode {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ---- Controls ---- */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.resetBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.resetBtn:hover {
+  background: var(--bg-glass-hover);
+  color: var(--text-primary);
+}
+
+.playBtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: #fff;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.playBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--accent-blue-glow);
+}
+
+.playBtn:active {
+  transform: scale(0.95);
+}
+
+.playBtn.pauseState {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  box-shadow: none;
+}
+
+.sessionCount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-amber);
+}
+
+/* ---- Session Dots ---- */
+.sessionDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-input);
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.dotFilled {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue-glow);
+}
+
+.dotLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .timerRing {
+    width: 240px;
+    height: 240px;
+  }
+
+  .timerDisplay {
+    font-size: 2.8rem;
+  }
+
+  .presets {
+    flex-direction: column;
+  }
+
+  .modeBtn {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+}
